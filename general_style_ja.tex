@@ -1,0 +1,16 @@
+\theoremstyle{definition}
+\newtheorem{Thm}{定理}[section]
+\newtheorem{Lem}[Thm]{補題}
+\newtheorem{Prop}[Thm]{命題}
+\newtheorem{Cor}[Thm]{系}
+\newtheorem{Ass}[Thm]{仮定}
+\newtheorem{Conj}[Thm]{予想}
+\newtheorem{Def}[Thm]{定義}
+\newtheorem{Rem}[Thm]{注}
+\newtheorem{Eg}[Thm]{例}
+\newtheorem{Prob}{問}[section]
+\newtheorem{Ex}{演習}[section]
+\newcounter{Exami}
+\newcommand{\Exam}{\noindent \refstepcounter{Exami} $ \boxed{\arabic{Exami}} $ \ }
+
+\renewcommand{\proofname}{\textbf{証明}}
