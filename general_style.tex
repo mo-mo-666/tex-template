@@ -8,6 +8,7 @@
 \usepackage{latexsym}
 \usepackage{mathrsfs}
 \usepackage{mathtools} % \coloneqq,\mathtoolsset
+\usepackage{mleftright}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage[nobreak]{cite} % no break for citation
@@ -39,14 +40,12 @@
 % Aliases
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Math operator
-\newcommand{\up}{\ensuremath{\uparrow}}
-\newcommand{\down}{\ensuremath{\downarrow}}
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
-% limit type
+%%% limit type
 \DeclareMathOperator*{\argmin}{arg~min}
 \DeclareMathOperator*{\argmax}{arg~max}
-% log type
+%%% log type
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\sgn}{sgn}
@@ -62,18 +61,34 @@
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\id}{id}
+\newcommand{\rmd}{\mathrm{d}}
 \newcommand{\eps}{\ensuremath{\varepsilon}}
+\newcommand{\up}{\ensuremath{\uparrow}} % ↑
+\newcommand{\down}{\ensuremath{\downarrow}} % ↓
+\newcommand{\setmid}[2]{\left\{ #1 \mathrel{} \middle| \mathrel{} #2 \right\}} % set
+
+% for probability
 \newcommand{\indep}{\mathop{\rotatebox[origin=a]{90}{$ \models $}}} % independent
 \newcommand{\laweqq}{\stackrel{\mathrm{law}}{=}}
 \newcommand{\lawto}{\stackrel{\mathrm{law}}{\longrightarrow}}
-\newcommand{\deqq}{\stackrel{d}{=}}
-\newcommand{\dto}{\stackrel{d}{\longrightarrow}}
+\newcommand{\deqq}{\stackrel{\mathrm{d}}{=}}
+\newcommand{\dto}{\stackrel{\mathrm{d}}{\longrightarrow}}
 \newcommand{\wto}{\stackrel{\mathrm{w}}{\longrightarrow}}
 \newcommand{\fdto}{\stackrel{\mathrm{f.d.}}{\longrightarrow}}
-
 \newcommand{\parm}[2]{{}_{#1}P_{#2}}
 \newcommand{\comb}[2]{{}_{#1}C_{#2}}
 \newcommand{\hcomb}[2]{{}_{#1}H_{#2}}
+
+% Bracket
+\newcommand{\absol}[1]{\mleft| #1 \mright|} % | | absolute value
+\newcommand{\norm}[1]{\mleft\| #1 \mright\|} % || || norm
+\newcommand{\rbra}[1]{\mleft(#1\mright)} % () round brackets or parentheses
+\newcommand{\cbra}[1]{\mleft{#1\mright}} % {} curly brackets or braces
+\newcommand{\sbra}[1]{\mleft[#1\mright]} % [] square brackets or brackets
+\newcommand{\abra}[1]{\mleft\langle#1\mright\rangle} % < > angle brackets or chevrons
+\newcommand{\floor}[1]{\mleft\lfloor#1\mright\rfloor} % floor function
+\newcommand{\ceil}[1]{\mleft\lceil#1\mright\rceil} % ceil function
 
 % Alphabet
 \newcommand{\bA}{\ensuremath{\mathbb{A}}}
@@ -102,6 +117,33 @@
 \newcommand{\bX}{\ensuremath{\mathbb{X}}}
 \newcommand{\bY}{\ensuremath{\mathbb{Y}}}
 \newcommand{\bZ}{\ensuremath{\mathbb{Z}}}
+
+\newcommand{\bbA}{\ensuremath{\mathbf{A}}}
+\newcommand{\bbB}{\ensuremath{\mathbf{B}}}
+\newcommand{\bbC}{\ensuremath{\mathbf{C}}}
+\newcommand{\bbD}{\ensuremath{\mathbf{D}}}
+\newcommand{\bbE}{\ensuremath{\mathbf{E}}}
+\newcommand{\bbF}{\ensuremath{\mathbf{F}}}
+\newcommand{\bbG}{\ensuremath{\mathbf{G}}}
+\newcommand{\bbH}{\ensuremath{\mathbf{H}}}
+\newcommand{\bbI}{\ensuremath{\mathbf{I}}}
+\newcommand{\bbJ}{\ensuremath{\mathbf{J}}}
+\newcommand{\bbK}{\ensuremath{\mathbf{K}}}
+\newcommand{\bbL}{\ensuremath{\mathbf{L}}}
+\newcommand{\bbM}{\ensuremath{\mathbf{M}}}
+\newcommand{\bbN}{\ensuremath{\mathbf{N}}}
+\newcommand{\bbO}{\ensuremath{\mathbf{O}}}
+\newcommand{\bbP}{\ensuremath{\mathbf{P}}}
+\newcommand{\bbQ}{\ensuremath{\mathbf{Q}}}
+\newcommand{\bbR}{\ensuremath{\mathbf{R}}}
+\newcommand{\bbS}{\ensuremath{\mathbf{S}}}
+\newcommand{\bbT}{\ensuremath{\mathbf{T}}}
+\newcommand{\bbU}{\ensuremath{\mathbf{U}}}
+\newcommand{\bbV}{\ensuremath{\mathbf{V}}}
+\newcommand{\bbW}{\ensuremath{\mathbf{W}}}
+\newcommand{\bbX}{\ensuremath{\mathbf{X}}}
+\newcommand{\bbY}{\ensuremath{\mathbf{Y}}}
+\newcommand{\bbZ}{\ensuremath{\mathbf{Z}}}
 
 \newcommand{\cA}{\ensuremath{\mathcal{A}}}
 \newcommand{\cB}{\ensuremath{\mathcal{B}}}
