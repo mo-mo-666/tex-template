@@ -40,8 +40,6 @@
 % Aliases
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Math operator
-\newcommand{\up}{\ensuremath{\uparrow}}
-\newcommand{\down}{\ensuremath{\downarrow}}
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 %%% limit type
@@ -63,15 +61,21 @@
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\id}{id}
+\newcommand{\rmd}{\mathrm{d}}
 \newcommand{\eps}{\ensuremath{\varepsilon}}
+\newcommand{\up}{\ensuremath{\uparrow}} % ↑
+\newcommand{\down}{\ensuremath{\downarrow}} % ↓
+\newcommand{\setmid}[2]{\left\{ #1 \mathrel{} \middle| \mathrel{} #2 \right\}} % set
+
+% for probability
 \newcommand{\indep}{\mathop{\rotatebox[origin=a]{90}{$ \models $}}} % independent
 \newcommand{\laweqq}{\stackrel{\mathrm{law}}{=}}
 \newcommand{\lawto}{\stackrel{\mathrm{law}}{\longrightarrow}}
-\newcommand{\deqq}{\stackrel{d}{=}}
-\newcommand{\dto}{\stackrel{d}{\longrightarrow}}
+\newcommand{\deqq}{\stackrel{\mathrm{d}}{=}}
+\newcommand{\dto}{\stackrel{\mathrm{d}}{\longrightarrow}}
 \newcommand{\wto}{\stackrel{\mathrm{w}}{\longrightarrow}}
 \newcommand{\fdto}{\stackrel{\mathrm{f.d.}}{\longrightarrow}}
-
 \newcommand{\parm}[2]{{}_{#1}P_{#2}}
 \newcommand{\comb}[2]{{}_{#1}C_{#2}}
 \newcommand{\hcomb}[2]{{}_{#1}H_{#2}}
@@ -113,6 +117,33 @@
 \newcommand{\bX}{\ensuremath{\mathbb{X}}}
 \newcommand{\bY}{\ensuremath{\mathbb{Y}}}
 \newcommand{\bZ}{\ensuremath{\mathbb{Z}}}
+
+\newcommand{\bbA}{\ensuremath{\mathbf{A}}}
+\newcommand{\bbB}{\ensuremath{\mathbf{B}}}
+\newcommand{\bbC}{\ensuremath{\mathbf{C}}}
+\newcommand{\bbD}{\ensuremath{\mathbf{D}}}
+\newcommand{\bbE}{\ensuremath{\mathbf{E}}}
+\newcommand{\bbF}{\ensuremath{\mathbf{F}}}
+\newcommand{\bbG}{\ensuremath{\mathbf{G}}}
+\newcommand{\bbH}{\ensuremath{\mathbf{H}}}
+\newcommand{\bbI}{\ensuremath{\mathbf{I}}}
+\newcommand{\bbJ}{\ensuremath{\mathbf{J}}}
+\newcommand{\bbK}{\ensuremath{\mathbf{K}}}
+\newcommand{\bbL}{\ensuremath{\mathbf{L}}}
+\newcommand{\bbM}{\ensuremath{\mathbf{M}}}
+\newcommand{\bbN}{\ensuremath{\mathbf{N}}}
+\newcommand{\bbO}{\ensuremath{\mathbf{O}}}
+\newcommand{\bbP}{\ensuremath{\mathbf{P}}}
+\newcommand{\bbQ}{\ensuremath{\mathbf{Q}}}
+\newcommand{\bbR}{\ensuremath{\mathbf{R}}}
+\newcommand{\bbS}{\ensuremath{\mathbf{S}}}
+\newcommand{\bbT}{\ensuremath{\mathbf{T}}}
+\newcommand{\bbU}{\ensuremath{\mathbf{U}}}
+\newcommand{\bbV}{\ensuremath{\mathbf{V}}}
+\newcommand{\bbW}{\ensuremath{\mathbf{W}}}
+\newcommand{\bbX}{\ensuremath{\mathbf{X}}}
+\newcommand{\bbY}{\ensuremath{\mathbf{Y}}}
+\newcommand{\bbZ}{\ensuremath{\mathbf{Z}}}
 
 \newcommand{\cA}{\ensuremath{\mathcal{A}}}
 \newcommand{\cB}{\ensuremath{\mathcal{B}}}
