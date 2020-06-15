@@ -14,9 +14,12 @@ TeX ファイル内で例えば以下のようにして使う。
 
 ```latex
 \documentclass[a4paper,12pt]{article}
+% \documentclass[uplatex,a4paper,10pt]{jsarticle}
+\usepackage[margin=20truemm]{geometry}
 
 \input{../tex-template/general_style}
 \input{../tex-template/general_style_en}
+% \input{../tex-template/general_style_ja}
 ```
 
 独自のスタイルを適用したい場合は適宜コピーして使えばよい。
