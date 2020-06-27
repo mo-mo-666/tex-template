@@ -62,10 +62,9 @@
 \DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\Coker}{Coker}
 \DeclareMathOperator{\id}{id}
-\newcommand{\rmd}{\mathrm{d}}
 \newcommand{\eps}{\ensuremath{\varepsilon}}
-\newcommand{\up}{\ensuremath{\uparrow}} % ↑
-\newcommand{\down}{\ensuremath{\downarrow}} % ↓
+\newcommand{\up}{\ensuremath{\uparrow}}
+\newcommand{\down}{\ensuremath{\downarrow}}
 \newcommand{\setmid}[2]{\left\{ #1 \mathrel{} \middle| \mathrel{} #2 \right\}} % set
 
 % for probability
@@ -81,14 +80,24 @@
 \newcommand{\hcomb}[2]{{}_{#1}H_{#2}}
 
 % Bracket
-\newcommand{\absol}[1]{\mleft| #1 \mright|} % | | absolute value
-\newcommand{\norm}[1]{\mleft\| #1 \mright\|} % || || norm
-\newcommand{\rbra}[1]{\mleft(#1\mright)} % () round brackets or parentheses
-\newcommand{\cbra}[1]{\mleft{#1\mright}} % {} curly brackets or braces
-\newcommand{\sbra}[1]{\mleft[#1\mright]} % [] square brackets or brackets
-\newcommand{\abra}[1]{\mleft\langle#1\mright\rangle} % < > angle brackets or chevrons
-\newcommand{\floor}[1]{\mleft\lfloor#1\mright\rfloor} % floor function
-\newcommand{\ceil}[1]{\mleft\lceil#1\mright\rceil} % ceil function
+% \newcommand{\abs}[1]{\mleft\lvert#1\mright\rvert} % | | absolute value
+% \newcommand{\norm}[1]{\mleft\lVert#1\mright\rVert} % || || norm
+% \newcommand{\rbra}[1]{\mleft(#1\mright)} % () round brackets or parentheses
+% \newcommand{\cbra}[1]{\mleft{#1\mright}} % {} curly brackets or braces
+% \newcommand{\sbra}[1]{\mleft[#1\mright]} % [] square brackets or brackets
+% \newcommand{\abra}[1]{\mleft\langle#1\mright\rangle} % < > angle brackets or chevrons
+% \newcommand{\floor}[1]{\mleft\lfloor#1\mright\rfloor} % floor function
+% \newcommand{\ceil}[1]{\mleft\lceil#1\mright\rceil} % ceil function
+% required mathtools
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\rbra}{(}{)}
+\DeclarePairedDelimiter{\cbra}{\{}{\}}
+\DeclarePairedDelimiter{\sbra}{[}{]}
+\DeclarePairedDelimiter{\abra}{\langle}{\langle}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
 
 % Alphabet
 \newcommand{\bA}{\ensuremath{\mathbb{A}}}
