@@ -9,9 +9,14 @@
 \usepackage{mathrsfs}
 \usepackage{mathtools} % \coloneqq,\mathtoolsset
 \usepackage{mleftright}
-\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage[nobreak]{cite} % no break for citation
+\usepackage[dvipdfmx,%
+ bookmarks=true,%
+ bookmarksdepth=3,%
+ bookmarksnumbered=true,%
+ colorlinks=true,%
+ setpagesize=false]{hyperref}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,9 +80,9 @@
 \newcommand{\dto}{\stackrel{\mathrm{d}}{\longrightarrow}}
 \newcommand{\wto}{\stackrel{\mathrm{w}}{\longrightarrow}}
 \newcommand{\fdto}{\stackrel{\mathrm{f.d.}}{\longrightarrow}}
-\newcommand{\parm}[2]{{}_{#1}P_{#2}}
-\newcommand{\comb}[2]{{}_{#1}C_{#2}}
-\newcommand{\hcomb}[2]{{}_{#1}H_{#2}}
+\newcommand{\parm}[2]{{}_{#1}\mathrm{P}_{#2}}
+\newcommand{\comb}[2]{{}_{#1}\mathrm{C}_{#2}}
+\newcommand{\hcomb}[2]{{}_{#1}\mathrm{H}_{#2}}
 
 % Bracket
 % \newcommand{\abs}[1]{\mleft\lvert#1\mright\rvert} % | | absolute value
