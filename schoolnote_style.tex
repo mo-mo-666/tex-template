@@ -9,13 +9,16 @@
 \usepackage{mathrsfs}
 \usepackage{mathtools} % \coloneqq,\mathtoolsset
 \usepackage{mleftright}
-\usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx}
 \usepackage[nobreak]{cite} % no break for citation
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{cutwin}
 \usepackage[dvipdfmx,%
  bookmarks=true,%
  bookmarksdepth=3,%
  bookmarksnumbered=true,%
- colorlinks=true,%
+ colorlinks=false,%
  setpagesize=false]{hyperref}
 
 
@@ -29,6 +32,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\everymath{\displaystyle}
+\allowdisplaybreaks[1]
+
 % Equation number
 \numberwithin{equation}{section}
 \mathtoolsset{showonlyrefs=true}
