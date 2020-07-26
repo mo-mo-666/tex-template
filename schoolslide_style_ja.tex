@@ -1,0 +1,274 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Package
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{bxdpx-beamer}% dvipdfmxなので必要
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{mathtools} % \coloneqq,\mathtoolsset
+\usepackage{mleftright}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fonts and Encoding
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % Latin Modern
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\renewcommand{\familydefault}{\sfdefault}
+\usefonttheme[onlymath]{serif}
+% PDFのしおり機能の日本語文字化けを防ぐ
+\usepackage{pxjahyper}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\everymath{\displaystyle}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aliases
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math operator
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+%%% limit type
+\DeclareMathOperator*{\argmin}{arg~min}
+\DeclareMathOperator*{\argmax}{arg~max}
+%%% log type
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Det}{Det}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\corank}{corank}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\id}{id}
+\newcommand{\eps}{\ensuremath{\varepsilon}}
+\newcommand{\up}{\ensuremath{\uparrow}}
+\newcommand{\down}{\ensuremath{\downarrow}}
+\newcommand{\setmid}[2]{\left\{ #1 \mathrel{} \middle| \mathrel{} #2 \right\}} % set
+
+% for probability
+\newcommand{\indep}{\mathop{\rotatebox[origin=a]{90}{$ \models $}}} % independent
+\newcommand{\laweqq}{\stackrel{\mathrm{law}}{=}}
+\newcommand{\lawto}{\stackrel{\mathrm{law}}{\longrightarrow}}
+\newcommand{\deqq}{\stackrel{\mathrm{d}}{=}}
+\newcommand{\dto}{\stackrel{\mathrm{d}}{\longrightarrow}}
+\newcommand{\wto}{\stackrel{\mathrm{w}}{\longrightarrow}}
+\newcommand{\fdto}{\stackrel{\mathrm{f.d.}}{\longrightarrow}}
+\newcommand{\parm}[2]{{}_{#1}\mathrm{P}_{#2}}
+\newcommand{\comb}[2]{{}_{#1}\mathrm{C}_{#2}}
+\newcommand{\hcomb}[2]{{}_{#1}\mathrm{H}_{#2}}
+
+% Bracket
+% \newcommand{\abs}[1]{\mleft\lvert#1\mright\rvert} % | | absolute value
+% \newcommand{\norm}[1]{\mleft\lVert#1\mright\rVert} % || || norm
+% \newcommand{\rbra}[1]{\mleft(#1\mright)} % () round brackets or parentheses
+% \newcommand{\cbra}[1]{\mleft{#1\mright}} % {} curly brackets or braces
+% \newcommand{\sbra}[1]{\mleft[#1\mright]} % [] square brackets or brackets
+% \newcommand{\abra}[1]{\mleft\langle#1\mright\rangle} % < > angle brackets or chevrons
+% \newcommand{\floor}[1]{\mleft\lfloor#1\mright\rfloor} % floor function
+% \newcommand{\ceil}[1]{\mleft\lceil#1\mright\rceil} % ceil function
+% required mathtools
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\rbra}{(}{)}
+\DeclarePairedDelimiter{\cbra}{\{}{\}}
+\DeclarePairedDelimiter{\sbra}{[}{]}
+\DeclarePairedDelimiter{\abra}{\langle}{\langle}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+% Alphabet
+\newcommand{\bA}{\ensuremath{\mathbb{A}}}
+\newcommand{\bB}{\ensuremath{\mathbb{B}}}
+\newcommand{\bC}{\ensuremath{\mathbb{C}}}
+\newcommand{\bD}{\ensuremath{\mathbb{D}}}
+\newcommand{\bE}{\ensuremath{\mathbb{E}}}
+\newcommand{\bF}{\ensuremath{\mathbb{F}}}
+\newcommand{\bG}{\ensuremath{\mathbb{G}}}
+\newcommand{\bH}{\ensuremath{\mathbb{H}}}
+\newcommand{\bI}{\ensuremath{\mathbb{I}}}
+\newcommand{\bJ}{\ensuremath{\mathbb{J}}}
+\newcommand{\bK}{\ensuremath{\mathbb{K}}}
+\newcommand{\bL}{\ensuremath{\mathbb{L}}}
+\newcommand{\bM}{\ensuremath{\mathbb{M}}}
+\newcommand{\bN}{\ensuremath{\mathbb{N}}}
+\newcommand{\bO}{\ensuremath{\mathbb{O}}}
+\newcommand{\bP}{\ensuremath{\mathbb{P}}}
+\newcommand{\bQ}{\ensuremath{\mathbb{Q}}}
+\newcommand{\bR}{\ensuremath{\mathbb{R}}}
+\newcommand{\bS}{\ensuremath{\mathbb{S}}}
+\newcommand{\bT}{\ensuremath{\mathbb{T}}}
+\newcommand{\bU}{\ensuremath{\mathbb{U}}}
+\newcommand{\bV}{\ensuremath{\mathbb{V}}}
+\newcommand{\bW}{\ensuremath{\mathbb{W}}}
+\newcommand{\bX}{\ensuremath{\mathbb{X}}}
+\newcommand{\bY}{\ensuremath{\mathbb{Y}}}
+\newcommand{\bZ}{\ensuremath{\mathbb{Z}}}
+
+\newcommand{\bbA}{\ensuremath{\mathbf{A}}}
+\newcommand{\bbB}{\ensuremath{\mathbf{B}}}
+\newcommand{\bbC}{\ensuremath{\mathbf{C}}}
+\newcommand{\bbD}{\ensuremath{\mathbf{D}}}
+\newcommand{\bbE}{\ensuremath{\mathbf{E}}}
+\newcommand{\bbF}{\ensuremath{\mathbf{F}}}
+\newcommand{\bbG}{\ensuremath{\mathbf{G}}}
+\newcommand{\bbH}{\ensuremath{\mathbf{H}}}
+\newcommand{\bbI}{\ensuremath{\mathbf{I}}}
+\newcommand{\bbJ}{\ensuremath{\mathbf{J}}}
+\newcommand{\bbK}{\ensuremath{\mathbf{K}}}
+\newcommand{\bbL}{\ensuremath{\mathbf{L}}}
+\newcommand{\bbM}{\ensuremath{\mathbf{M}}}
+\newcommand{\bbN}{\ensuremath{\mathbf{N}}}
+\newcommand{\bbO}{\ensuremath{\mathbf{O}}}
+\newcommand{\bbP}{\ensuremath{\mathbf{P}}}
+\newcommand{\bbQ}{\ensuremath{\mathbf{Q}}}
+\newcommand{\bbR}{\ensuremath{\mathbf{R}}}
+\newcommand{\bbS}{\ensuremath{\mathbf{S}}}
+\newcommand{\bbT}{\ensuremath{\mathbf{T}}}
+\newcommand{\bbU}{\ensuremath{\mathbf{U}}}
+\newcommand{\bbV}{\ensuremath{\mathbf{V}}}
+\newcommand{\bbW}{\ensuremath{\mathbf{W}}}
+\newcommand{\bbX}{\ensuremath{\mathbf{X}}}
+\newcommand{\bbY}{\ensuremath{\mathbf{Y}}}
+\newcommand{\bbZ}{\ensuremath{\mathbf{Z}}}
+
+\newcommand{\cA}{\ensuremath{\mathcal{A}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cC}{\ensuremath{\mathcal{C}}}
+\newcommand{\cD}{\ensuremath{\mathcal{D}}}
+\newcommand{\cE}{\ensuremath{\mathcal{E}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+\newcommand{\cG}{\ensuremath{\mathcal{G}}}
+\newcommand{\cH}{\ensuremath{\mathcal{H}}}
+\newcommand{\cI}{\ensuremath{\mathcal{I}}}
+\newcommand{\cJ}{\ensuremath{\mathcal{J}}}
+\newcommand{\cK}{\ensuremath{\mathcal{K}}}
+\newcommand{\cL}{\ensuremath{\mathcal{L}}}
+\newcommand{\cM}{\ensuremath{\mathcal{M}}}
+\newcommand{\cN}{\ensuremath{\mathcal{N}}}
+\newcommand{\cO}{\ensuremath{\mathcal{O}}}
+\newcommand{\cP}{\ensuremath{\mathcal{P}}}
+\newcommand{\cQ}{\ensuremath{\mathcal{Q}}}
+\newcommand{\cR}{\ensuremath{\mathcal{R}}}
+\newcommand{\cS}{\ensuremath{\mathcal{S}}}
+\newcommand{\cT}{\ensuremath{\mathcal{T}}}
+\newcommand{\cU}{\ensuremath{\mathcal{U}}}
+\newcommand{\cV}{\ensuremath{\mathcal{V}}}
+\newcommand{\cW}{\ensuremath{\mathcal{W}}}
+\newcommand{\cX}{\ensuremath{\mathcal{X}}}
+\newcommand{\cY}{\ensuremath{\mathcal{Y}}}
+\newcommand{\cZ}{\ensuremath{\mathcal{Z}}}
+
+\newcommand{\sA}{\ensuremath{\mathscr{A}}}
+\newcommand{\sB}{\ensuremath{\mathscr{B}}}
+\newcommand{\sC}{\ensuremath{\mathscr{C}}}
+\newcommand{\sD}{\ensuremath{\mathscr{D}}}
+\newcommand{\sE}{\ensuremath{\mathscr{E}}}
+\newcommand{\sF}{\ensuremath{\mathscr{F}}}
+\newcommand{\sG}{\ensuremath{\mathscr{G}}}
+\newcommand{\sH}{\ensuremath{\mathscr{H}}}
+\newcommand{\sI}{\ensuremath{\mathscr{I}}}
+\newcommand{\sJ}{\ensuremath{\mathscr{J}}}
+\newcommand{\sK}{\ensuremath{\mathscr{K}}}
+\newcommand{\sL}{\ensuremath{\mathscr{L}}}
+\newcommand{\sM}{\ensuremath{\mathscr{M}}}
+\newcommand{\sN}{\ensuremath{\mathscr{N}}}
+\newcommand{\sO}{\ensuremath{\mathscr{O}}}
+\newcommand{\sP}{\ensuremath{\mathscr{P}}}
+\newcommand{\sQ}{\ensuremath{\mathscr{Q}}}
+\newcommand{\sR}{\ensuremath{\mathscr{R}}}
+\newcommand{\sS}{\ensuremath{\mathscr{S}}}
+\newcommand{\sT}{\ensuremath{\mathscr{T}}}
+\newcommand{\sU}{\ensuremath{\mathscr{U}}}
+\newcommand{\sV}{\ensuremath{\mathscr{V}}}
+\newcommand{\sW}{\ensuremath{\mathscr{W}}}
+\newcommand{\sX}{\ensuremath{\mathscr{X}}}
+\newcommand{\sY}{\ensuremath{\mathscr{Y}}}
+\newcommand{\sZ}{\ensuremath{\mathscr{Z}}}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Theorems by amsthm package
+% % See https://ftp.yz.yamagata-u.ac.jp/pub/CTAN/macros/latex/required/amscls/doc/amsthdoc.pdf.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newtheoremstyle{mystyle}%         % Name
+%   {18pt}%                                     % Space above
+%   {18pt}%                                     % Space below
+%   {\normalfont}%                          % Body font
+%   {}%                                     % Indent amount
+%   {\bfseries}%                            % Theorem head font
+%   {.}%                                    % Punctuation after theorem head
+%   {6pt}%                                    % Space after theorem head, ' ', or \newline
+%   {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}%
+% \theoremstyle{mystyle}
+
+\setbeamertemplate{theorems}[numbered]  %% 定理に番号をつける
+\theoremstyle{definition}
+\newtheorem{Thm}{定理}[section]
+\newtheorem{Lem}[Thm]{補題}
+\newtheorem{Prop}[Thm]{命題}
+\newtheorem{Cor}[Thm]{系}
+\newtheorem{Ass}[Thm]{仮定}
+\newtheorem{Conj}[Thm]{予想}
+\newtheorem{Def}[Thm]{定義}
+\newtheorem{Rem}[Thm]{注}
+\newtheorem{Eg}[Thm]{例}
+\newtheorem{Egprob}[Thm]{例題}
+\newtheorem{Prac}{練習}[section]
+\newtheorem{Prob}{問}
+\newtheorem{Ex}{演習}[section]
+\newtheorem{Spprob}{特別課題}
+
+\newtheorem*{Thm*}{定理}
+\newtheorem*{Lem*}{補題}
+\newtheorem*{Prop*}{命題}
+\newtheorem*{Cor*}{系}
+\newtheorem*{Ass*}{仮定}
+\newtheorem*{Conj*}{予想}
+\newtheorem*{Def*}{定義}
+\newtheorem*{Rem*}{注}
+\newtheorem*{Eg*}{例}
+\newtheorem*{Egprob*}{例題}
+\newtheorem*{Prac*}{練習}
+\newtheorem*{Prob*}{問}
+\newtheorem*{Ex*}{演習}
+\newtheorem*{Spprob*}{特別課題}
+
+\renewcommand{\proofname}{証明}
+
+% 証明の部分をイタリックにせず，太字にする．
+% 日本語しか書かないなら
+% \renewcommand{\proofname}{\textbf{証明}}
+% でよいが，それだと \begin{proof}[hoge] でhogeに数字やアルファベットなどを含むときはうまくいかない．
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+\pushQED{\qed}%
+\normalfont \topsep6\p@\@plus6\p@\relax
+\trivlist
+\item\relax
+% {\itshape
+{\bfseries
+#1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+\popQED\endtrivlist\@endpefalse
+}
+\makeatother
