@@ -17,10 +17,12 @@
 % Fonts and Encoding
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[T1]{fontenc}
-\usepackage{lmodern} % Latin Modern
+\usepackage{lmodern}
+% \usepackage{newtxtext,mathptmx}
 \renewcommand{\kanjifamilydefault}{\gtdefault}
 \renewcommand{\familydefault}{\sfdefault}
 \usefonttheme[onlymath]{serif}
+\mathversion{bold}
 % PDFのしおり機能の日本語文字化けを防ぐ
 \usepackage{pxjahyper}
 
@@ -32,6 +34,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \everymath{\displaystyle}
 
+% Equation number
+\numberwithin{equation}{section}
+\mathtoolsset{showonlyrefs=true}
+
+\renewcommand{\baselinestretch}{1.2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Aliases
