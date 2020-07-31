@@ -18,7 +18,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-% \usepackage{newtxtext,mathptmx}
+% \usepackage{newtxtext}
 \renewcommand{\kanjifamilydefault}{\gtdefault}
 \renewcommand{\familydefault}{\sfdefault}
 \usefonttheme[onlymath]{serif}
@@ -234,10 +234,12 @@
 \newtheorem{Lem}[Thm]{補題}
 \newtheorem{Prop}[Thm]{命題}
 \newtheorem{Cor}[Thm]{系}
-\newtheorem{Ass}[Thm]{仮定}
-\newtheorem{Conj}[Thm]{予想}
 \newtheorem{Def}[Thm]{定義}
+\theoremstyle{example}
+\theoremstyle{remark}
 \newtheorem{Rem}[Thm]{注}
+\newtheorem{Conj}[Thm]{予想}
+\newtheorem{Ass}[Thm]{仮定}
 \newtheorem{Eg}[Thm]{例}
 \newtheorem{Egprob}[Thm]{例題}
 \newtheorem{Prac}{練習}[section]
