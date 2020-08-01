@@ -13,13 +13,17 @@
 \usepackage[nobreak]{cite} % no break for citation
 \usepackage{multicol}
 \usepackage{wrapfig}
-\usepackage{cutwin}
-\usepackage[dvipdfmx,%
- bookmarks=true,%
- bookmarksdepth=3,%
- bookmarksnumbered=true,%
- colorlinks=false,%
- setpagesize=false]{hyperref}
+\usepackage{float} % for figure
+% \usepackage[dvipdfmx,%
+%  bookmarks=true,%
+%  bookmarksdepth=3,%
+%  bookmarksnumbered=true,%
+%  colorlinks=false,%
+%  setpagesize=false,%
+%  pdftitle={},%
+%  pdfsubject={},%
+%  pdfauthor={},%
+%  pdfkeywords={}]{hyperref}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,6 +31,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[T1]{fontenc}
 \usepackage{lmodern} % Latin Modern
+\usepackage{bm} % must be loaded after font change.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,14 +96,6 @@
 \newcommand{\hcomb}[2]{{}_{#1}\mathrm{H}_{#2}}
 
 % Bracket
-% \newcommand{\abs}[1]{\mleft\lvert#1\mright\rvert} % | | absolute value
-% \newcommand{\norm}[1]{\mleft\lVert#1\mright\rVert} % || || norm
-% \newcommand{\rbra}[1]{\mleft(#1\mright)} % () round brackets or parentheses
-% \newcommand{\cbra}[1]{\mleft{#1\mright}} % {} curly brackets or braces
-% \newcommand{\sbra}[1]{\mleft[#1\mright]} % [] square brackets or brackets
-% \newcommand{\abra}[1]{\mleft\langle#1\mright\rangle} % < > angle brackets or chevrons
-% \newcommand{\floor}[1]{\mleft\lfloor#1\mright\rfloor} % floor function
-% \newcommand{\ceil}[1]{\mleft\lceil#1\mright\rceil} % ceil function
 % required mathtools
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}

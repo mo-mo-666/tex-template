@@ -11,7 +11,17 @@
 \usepackage{mathtools} % \coloneqq,\mathtoolsset
 \usepackage{mleftright}
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage{float} % for figure
+% \usepackage[dvipdfmx,%
+%  bookmarks=true,%
+%  bookmarksdepth=3,%
+%  bookmarksnumbered=true,%
+%  colorlinks=false,%
+%  setpagesize=false,%
+%  pdftitle={},%
+%  pdfsubject={},%
+%  pdfauthor={},%
+%  pdfkeywords={}]{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fonts and Encoding
@@ -19,6 +29,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 % \usepackage{newtxtext}
+\usepackage{bm} % must be loaded after font change package.
 \renewcommand{\kanjifamilydefault}{\gtdefault}
 \renewcommand{\familydefault}{\sfdefault}
 \usefonttheme[onlymath]{serif}
@@ -39,6 +50,9 @@
 \mathtoolsset{showonlyrefs=true}
 
 \renewcommand{\baselinestretch}{1.2}
+
+\usepackage{footnpag}
+\renewcommand\thefootnote{\arabic{footnote})}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Aliases
@@ -230,21 +244,20 @@
 
 \setbeamertemplate{theorems}[numbered]  %% 定理に番号をつける
 \theoremstyle{definition}
-\newtheorem{Thm}{定理}[section]
+\newtheorem{Thm}{定理}
 \newtheorem{Lem}[Thm]{補題}
 \newtheorem{Prop}[Thm]{命題}
 \newtheorem{Cor}[Thm]{系}
 \newtheorem{Def}[Thm]{定義}
 \theoremstyle{example}
-\theoremstyle{remark}
 \newtheorem{Rem}[Thm]{注}
 \newtheorem{Conj}[Thm]{予想}
 \newtheorem{Ass}[Thm]{仮定}
 \newtheorem{Eg}[Thm]{例}
 \newtheorem{Egprob}[Thm]{例題}
-\newtheorem{Prac}{練習}[section]
+\newtheorem{Prac}{練習}
 \newtheorem{Prob}{問}
-\newtheorem{Ex}{演習}[section]
+\newtheorem{Ex}{演習}
 \newtheorem{Spprob}{特別課題}
 
 \newtheorem*{Thm*}{定理}
