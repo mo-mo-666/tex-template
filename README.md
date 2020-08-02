@@ -62,10 +62,6 @@ TeX ファイル内で例えば以下のようにして使う。
 \documentclass[aspectratio=169,11pt,dvipdfmx]{beamer}
 \input{../tex-template/schoolslide_style_ja}
 
-\usepackage{hyperref}
-% PDFのしおり機能の日本語文字化けを防ぐ
-\usepackage{pxjahyper}
-
 % \usetheme{Copenhagen}
 \usetheme[height=1cm]{Rochester}
 \usecolortheme{orchid}
