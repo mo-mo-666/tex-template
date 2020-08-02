@@ -47,7 +47,13 @@
 
 % Enumi
 % http://www.texnia.com/archive/enumitem.pdf
-
+\usepackage{enumitem}
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\textbf{\framebox[1.5zw]{\theenumi}}} }
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\labelenumii}{(\theenumii)}
+\setlist{leftmargin=0.3zw}
+\setlist[1]{leftmargin=*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
