@@ -1,6 +1,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fonts and Encoding
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[uplatex,deluxe]{otf}
+\usepackage[noalphabet]{pxchfon}
+\setlightminchofont{HaranoAjiMincho-Light.otf}
+\setmediumminchofont{HaranoAjiMincho-Regular.otf}
+\setboldminchofont{HaranoAjiMincho-Bold.otf}
+\setmediumgothicfont{HaranoAjiGothic-Medium.otf}
+\setboldgothicfont{HaranoAjiGothic-Medium.otf}
+\setxboldgothicfont{HaranoAjiGothic-Heavy.otf}
+\setmarugothicfont{HaranoAjiGothic-Regular.otf}
+
+\renewcommand{\textbf}[1]{{\bfseries\gtfamily#1}}
+\usepackage{titlesec}
+\titleformat*{\section}{\Large\bfseries\gtfamily}
+\titleformat*{\subsection}{\large\bfseries\gtfamily}
+\titleformat*{\subsubsection}{\bfseries\gtfamily}
 
 
 
@@ -13,7 +28,7 @@
   {18pt}%                                     % Space below
   {\normalfont}%                          % Body font
   {}%                                     % Indent amount
-  {\bfseries}%                            % Theorem head font
+  {\bfseries\gtfamily}%                            % Theorem head font
   {.}%                                    % Punctuation after theorem head
   {6pt}%                                    % Space after theorem head, ' ', or \newline
   {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}%
@@ -63,7 +78,7 @@
 \trivlist
 \item\relax
 % {\itshape
-{\bfseries
+{\bfseries\gtfamily
 #1\@addpunct{.}}\hspace\labelsep\ignorespaces
 }{%
 \popQED\endtrivlist\@endpefalse
