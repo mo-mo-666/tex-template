@@ -1,6 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Package
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{bxdpx-beamer}% dvipdfmxなので必要
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -9,34 +10,50 @@
 \usepackage{mathrsfs}
 \usepackage{mathtools} % \coloneqq,\mathtoolsset
 \usepackage{mleftright}
-\usepackage{graphicx}
-\usepackage[nobreak]{cite} % no break for citation
-
+\usepackage{graphicx, xcolor}
+\usepackage{float} % for figure
+% \usepackage{hyperref} % beamer automatically loads hyperref.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fonts and Encoding
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[T1]{fontenc}
-\usepackage{lmodern} % Latin Modern
+\usepackage{lmodern}
+% \usepackage{newtxtext}
+\usepackage{bm} % must be loaded after font change package.
+\usepackage[uplatex,deluxe]{otf}
+\usepackage[noalphabet]{pxchfon}
+\setlightminchofont{HaranoAjiMincho-Light.otf}
+\setmediumminchofont{HaranoAjiMincho-Medium.otf}
+\setboldminchofont{HaranoAjiMincho-Bold.otf}
+\setmediumgothicfont{HaranoAjiGothic-Medium.otf}
+\setboldgothicfont{HaranoAjiGothic-Bold.otf}
+\setxboldgothicfont{HaranoAjiGothic-Heavy.otf}
+\setmarugothicfont{HaranoAjiGothic-Regular.otf}
+
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\renewcommand{\familydefault}{\sfdefault}
+\usefonttheme[onlymath]{serif}
+\mathversion{bold}
+% PDFのしおり機能の日本語文字化けを防ぐ
+\usepackage{pxjahyper}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\everymath{\displaystyle}
+
 % Equation number
 \numberwithin{equation}{section}
 \mathtoolsset{showonlyrefs=true}
 
-% Allow equations to span multiple pages
-\allowdisplaybreaks[1]
+\renewcommand{\baselinestretch}{1.2}
 
-% Enumi
-\usepackage{enumitem}
-\renewcommand{\theenumi}{\roman{enumi}}
-\renewcommand{\labelenumi}{(\theenumi)}
-\renewcommand{\theenumii}{\alph{enumii}}
-\renewcommand{\labelenumii}{(\theenumi-\theenumii)}
-
+\usepackage{footnpag}
+\renewcommand\thefootnote{\arabic{footnote})}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Aliases
@@ -77,16 +94,11 @@
 \newcommand{\dto}{\stackrel{\mathrm{d}}{\longrightarrow}}
 \newcommand{\wto}{\stackrel{\mathrm{w}}{\longrightarrow}}
 \newcommand{\fdto}{\stackrel{\mathrm{f.d.}}{\longrightarrow}}
+\newcommand{\parm}[2]{{}_{#1}\mathrm{P}_{#2}}
+\newcommand{\comb}[2]{{}_{#1}\mathrm{C}_{#2}}
+\newcommand{\hcomb}[2]{{}_{#1}\mathrm{H}_{#2}}
 
 % Bracket
-% \newcommand{\abs}[1]{\mleft\lvert#1\mright\rvert} % | | absolute value
-% \newcommand{\norm}[1]{\mleft\lVert#1\mright\rVert} % || || norm
-% \newcommand{\rbra}[1]{\mleft(#1\mright)} % () round brackets or parentheses
-% \newcommand{\cbra}[1]{\mleft{#1\mright}} % {} curly brackets or braces
-% \newcommand{\sbra}[1]{\mleft[#1\mright]} % [] square brackets or brackets
-% \newcommand{\abra}[1]{\mleft\langle#1\mright\rangle} % < > angle brackets or chevrons
-% \newcommand{\floor}[1]{\mleft\lfloor#1\mright\rfloor} % floor function
-% \newcommand{\ceil}[1]{\mleft\lceil#1\mright\rceil} % ceil function
 % required mathtools
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert} % | | absolute value
 \DeclarePairedDelimiter{\norm}{\lVert}{\rVert} % || || norm
@@ -206,3 +218,72 @@
 \newcommand{\sX}{\ensuremath{\mathscr{X}}}
 \newcommand{\sY}{\ensuremath{\mathscr{Y}}}
 \newcommand{\sZ}{\ensuremath{\mathscr{Z}}}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Theorems by amsthm package
+% % See https://ftp.yz.yamagata-u.ac.jp/pub/CTAN/macros/latex/required/amscls/doc/amsthdoc.pdf.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newtheoremstyle{mystyle}%         % Name
+%   {18pt}%                                     % Space above
+%   {18pt}%                                     % Space below
+%   {\normalfont}%                          % Body font
+%   {}%                                     % Indent amount
+%   {\bfseries}%                            % Theorem head font
+%   {.}%                                    % Punctuation after theorem head
+%   {6pt}%                                    % Space after theorem head, ' ', or \newline
+%   {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}%
+% \theoremstyle{mystyle}
+
+\setbeamertemplate{theorems}[numbered]  %% 定理に番号をつける
+\theoremstyle{definition}
+\newtheorem{Thm}{定理}
+\newtheorem{Lem}[Thm]{補題}
+\newtheorem{Prop}[Thm]{命題}
+\newtheorem{Cor}[Thm]{系}
+\newtheorem{Def}[Thm]{定義}
+\theoremstyle{example}
+\newtheorem{Rem}[Thm]{注}
+\newtheorem{Conj}[Thm]{予想}
+\newtheorem{Ass}[Thm]{仮定}
+\newtheorem{Eg}[Thm]{例}
+\newtheorem{Egprob}[Thm]{例題}
+\newtheorem{Prac}{練習}
+\newtheorem{Prob}{問}
+\newtheorem{Ex}{演習}
+\newtheorem{Spprob}{特別課題}
+
+\newtheorem*{Thm*}{定理}
+\newtheorem*{Lem*}{補題}
+\newtheorem*{Prop*}{命題}
+\newtheorem*{Cor*}{系}
+\newtheorem*{Ass*}{仮定}
+\newtheorem*{Conj*}{予想}
+\newtheorem*{Def*}{定義}
+\newtheorem*{Rem*}{注}
+\newtheorem*{Eg*}{例}
+\newtheorem*{Egprob*}{例題}
+\newtheorem*{Prac*}{練習}
+\newtheorem*{Prob*}{問}
+\newtheorem*{Ex*}{演習}
+\newtheorem*{Spprob*}{特別課題}
+
+\renewcommand{\proofname}{証明}
+
+% 証明の部分をイタリックにせず，太字にする．
+% 日本語しか書かないなら
+% \renewcommand{\proofname}{\textbf{証明}}
+% でよいが，それだと \begin{proof}[hoge] でhogeに数字やアルファベットなどを含むときはうまくいかない．
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+\pushQED{\qed}%
+\normalfont \topsep6\p@\@plus6\p@\relax
+\trivlist
+\item\relax
+% {\itshape
+{\bfseries
+#1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+\popQED\endtrivlist\@endpefalse
+}
+\makeatother
