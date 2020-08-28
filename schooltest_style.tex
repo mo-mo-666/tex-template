@@ -9,33 +9,51 @@
 \usepackage{mathrsfs}
 \usepackage{mathtools} % \coloneqq,\mathtoolsset
 \usepackage{mleftright}
-\usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx}
 \usepackage[nobreak]{cite} % no break for citation
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{float} % for figure
+% \usepackage[dvipdfmx,%
+%  bookmarks=true,%
+%  bookmarksdepth=3,%
+%  bookmarksnumbered=true,%
+%  colorlinks=false,%
+%  setpagesize=false,%
+%  pdftitle={},%
+%  pdfsubject={},%
+%  pdfauthor={},%
+%  pdfkeywords={}]{hyperref}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fonts and Encoding
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[T1]{fontenc}
-\usepackage{lmodern} % Latin Modern
+\usepackage{newtxtext,newtxmath} % times
+% \usepackage{lmodern} % Latin Modern
+\usepackage{bm} % must be loaded after font change.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\everymath{\displaystyle}
+\allowdisplaybreaks[1]
+
 % Equation number
 \numberwithin{equation}{section}
 \mathtoolsset{showonlyrefs=true}
 
-% Allow equations to span multiple pages
-\allowdisplaybreaks[1]
-
 % Enumi
+% http://www.texnia.com/archive/enumitem.pdf
 \usepackage{enumitem}
-\renewcommand{\theenumi}{\roman{enumi}}
-\renewcommand{\labelenumi}{(\theenumi)}
-\renewcommand{\theenumii}{\alph{enumii}}
-\renewcommand{\labelenumii}{(\theenumi-\theenumii)}
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{{\textbf{\framebox[1.5zw]{\theenumi}}} }
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\labelenumii}{(\theenumii)}
+\setlist{leftmargin=0.3zw}
+\setlist[1]{leftmargin=*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,25 +95,20 @@
 \newcommand{\dto}{\stackrel{\mathrm{d}}{\longrightarrow}}
 \newcommand{\wto}{\stackrel{\mathrm{w}}{\longrightarrow}}
 \newcommand{\fdto}{\stackrel{\mathrm{f.d.}}{\longrightarrow}}
+\newcommand{\parm}[2]{{}_{#1}\mathrm{P}_{#2}}
+\newcommand{\comb}[2]{{}_{#1}\mathrm{C}_{#2}}
+\newcommand{\hcomb}[2]{{}_{#1}\mathrm{H}_{#2}}
 
 % Bracket
-% \newcommand{\abs}[1]{\mleft\lvert#1\mright\rvert} % | | absolute value
-% \newcommand{\norm}[1]{\mleft\lVert#1\mright\rVert} % || || norm
-% \newcommand{\rbra}[1]{\mleft(#1\mright)} % () round brackets or parentheses
-% \newcommand{\cbra}[1]{\mleft{#1\mright}} % {} curly brackets or braces
-% \newcommand{\sbra}[1]{\mleft[#1\mright]} % [] square brackets or brackets
-% \newcommand{\abra}[1]{\mleft\langle#1\mright\rangle} % < > angle brackets or chevrons
-% \newcommand{\floor}[1]{\mleft\lfloor#1\mright\rfloor} % floor function
-% \newcommand{\ceil}[1]{\mleft\lceil#1\mright\rceil} % ceil function
 % required mathtools
-\DeclarePairedDelimiter{\abs}{\lvert}{\rvert} % | | absolute value
-\DeclarePairedDelimiter{\norm}{\lVert}{\rVert} % || || norm
-\DeclarePairedDelimiter{\rbra}{(}{)} % () round brackets or parentheses
-\DeclarePairedDelimiter{\cbra}{\{}{\}} % {} curly brackets or braces
-\DeclarePairedDelimiter{\sbra}{[}{]} % [] square brackets or brackets
-\DeclarePairedDelimiter{\abra}{\langle}{\rangle} % < > angle brackets or chevrons
-\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor} % floor function
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil} % ceil function
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\rbra}{(}{)}
+\DeclarePairedDelimiter{\cbra}{\{}{\}}
+\DeclarePairedDelimiter{\sbra}{[}{]}
+\DeclarePairedDelimiter{\abra}{\langle}{\langle}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 
 % Alphabet
