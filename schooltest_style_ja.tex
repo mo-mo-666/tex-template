@@ -8,17 +8,18 @@
 % Theorems by amsthm package
 % See https://ftp.yz.yamagata-u.ac.jp/pub/CTAN/macros/latex/required/amscls/doc/amsthdoc.pdf.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtheoremstyle{mystyle}%         % Name
-  {18pt}%                                     % Space above
-  {18pt}%                                     % Space below
-  {\normalfont}%                          % Body font
-  {}%                                     % Indent amount
-  {\bfseries}%                            % Theorem head font
-  {.}%                                    % Punctuation after theorem head
-  {6pt}%                                    % Space after theorem head, ' ', or \newline
-  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}%
-\theoremstyle{mystyle}
+% \newtheoremstyle{mystyle}%         % Name
+%   {18pt}%                                     % Space above
+%   {18pt}%                                     % Space below
+%   {\normalfont}%                          % Body font
+%   {}%                                     % Indent amount
+%   {\bfseries}%                            % Theorem head font
+%   {.}%                                    % Punctuation after theorem head
+%   {6pt}%                                    % Space after theorem head, ' ', or \newline
+%   {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}%
+% \theoremstyle{mystyle}
 
+\theoremstyle{definition}
 \newtheorem{Thm}{定理}
 \newtheorem{Lem}[Thm]{補題}
 \newtheorem{Prop}[Thm]{命題}
