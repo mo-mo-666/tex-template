@@ -18,7 +18,7 @@
 \usepackage{booktabs}
 \usepackage{fancybox}
 \usepackage{ascmac}
-\usepackage{tcolorbox}
+\usepackage[breakable]{tcolorbox}
 % \usepackage[dvipdfmx,%
 %  bookmarks=true,%
 %  bookmarksdepth=3,%
@@ -53,11 +53,13 @@
 
 % Enumi
 % http://www.texnia.com/archive/enumitem.pdf
-\usepackage{enumitem}
+\usepackage[inline]{enumitem}
 \renewcommand{\theenumi}{(\arabic{enumi})}
 \renewcommand{\labelenumi}{\theenumi}
 \renewcommand{\theenumii}{(\roman{enumii})}
 \renewcommand{\labelenumii}{\theenumii}
+\setlist{leftmargin=0.5zw}
+\setlist[1]{leftmargin=*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
